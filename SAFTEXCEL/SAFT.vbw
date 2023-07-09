@@ -1,0 +1,10 @@
+FrmReporteMo = 362, 148, 896, 983, C, 0, 0, 0, 0, C
+DeRia = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+inicio = 429, 161, 1745, 996, I
+CapaBD = 362, 148, 896, 983, C
+Factura = 864, 134, 1398, 969, C
+DetalleFactura = 0, 0, 0, 0, C
+Exporta = 285, 198, 1319, 1033, 
+Utilities = 362, 148, 896, 983, C
+Contrib = 362, 148, 896, 983, CZ
+Alcaldia = 0, 0, 0, 0, C

@@ -1,0 +1,7 @@
+StrRptAbonadoSPRubro = "SELECT AbonadoSPEnc.ASPE_Seq, CuentaIngreso_A.NombreCtaIngreso, Contribuyente.Pnombre, Contribuyente.SNombre, Contribuyente.PApellido, Contribuyente.SApellido, AbonadoSPEnc.Identidad,  Catastro.ClaveCatastro, AbonadoSPDet.ASPD_Valor, TablaBarrio.NombreBarrio "
+    StrRptAbonadoSPRubro = StrRptAbonadoSPRubro & "FROM AbonadoSPDet INNER JOIN AbonadoSPEnc ON AbonadoSPEnc.ASPE_Seq = AbonadoSPDet.ASPE_Seq INNER JOIN Catastro  ON AbonadoSPEnc.ClaveCatastro = Catastro.ClaveCatastro  INNER JOIN Contribuyente  ON Catastro.Identidad = Contribuyente.Identidad  INNER JOIN TablaBarrio  ON Catastro.CodBarrio = TablaBarrio.CodBarrio  INNER JOIN AvPgEnc ON AvPgEnc.Identidad = Contribuyente.Identidad "
+    StrRptAbonadoSPRubro = StrRptAbonadoSPRubro & "INNER JOIN CuentaIngreso_A ON AbonadoSPDet.CtaIngreso = CuentaIngreso_A.CtaIngreso "
+    StrRptAbonadoSPRubro = StrRptAbonadoSPRubro & "WHERE (AvPgEnc.AvPgEstado = 1) and CuentaIngreso_A.anio = datepart(year, getdate()) AND (AbonadoSPEnc.ASPE_Estado  = " & txtEstado & ")" & codBarrio & rubroCtaIngreso
+    StrRptAbonadoSPRubro = StrRptAbonadoSPRubro & " GROUP BY AbonadoSPEnc.ASPE_Seq, CuentaIngreso_A.NombreCtaIngreso, AbonadoSPEnc.Identidad, Contribuyente.Pnombre, Contribuyente.SNombre, Contribuyente.PApellido, Contribuyente.SApellido, Catastro.ClaveCatastro, AbonadoSPDet.ASPD_Valor, TablaBarrio.NombreBarrio "
+    StrRptAbonadoSPRubro = StrRptAbonadoSPRubro & "ORDER BY AbonadoSPEnc.Identidad "
+    

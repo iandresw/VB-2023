@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ActiveReportsLayout 
+	GUIDLIB="{ED087104-F3EA-42BE-A4E9-19DB90DBEB36}" GUIDREP="{4EBAFAA0-CF7E-4209-8A58-B0365E167CCC}" 
+	LICENSE="100001003B7FD2001B26564594C48DAC4C674BED30006400790033007400680078006900750069006F0071007200340035003200660068006700640072003400
+		740066000000"
+	PrintWidth="10080"
+	DocumentName="ActiveReports Document"
+	ScriptLang="VBScript"
+>
+<Watermark
+		>
+</Watermark>
+<PageSettings	LeftMargin="1000"
+	RightMargin="1000"
+	TopMargin="440"
+	BottomMargin="440"
+	PaperSize="1"
+>
+</PageSettings>
+<StyleSheet>
+	<Style Name="Normal"
+	Value="font-family: Arial; font-style: normal; font-variant: inherit; font-weight: normal; font-size: 10pt; font-size-adjust: inherit; font-stretch: inherit; color: rgb(0,0,0); background-color: rgb(255,255,255); background-image: inherit; background-repeat: inherit; background-attachment: inherit; background-x-position: inherit; background-y-position: inherit; opacity: inherit; word-spacing: inherit; letter-spacing: inherit; text-decoration: none; vertical-align: inherit; text-transform: inherit; text-align: inherit; text-indent: inherit; unicode-bidi: inherit; line-height: inherit; white-space: inherit; ddo-can-grow: inherit; ddo-can-shrink: inherit; ddo-char-set: 0; "
+	/>
+	<Style Name="Heading1"
+	Value="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: bold; font-size: 16pt; font-size-adjust: inherit; font-stretch: inherit; "
+	/>
+	<Style Name="Heading2"
+	Value="font-family: Times New Roman; font-style: italic; font-variant: inherit; font-weight: bold; font-size: 14pt; font-size-adjust: inherit; font-stretch: inherit; "
+	/>
+	<Style Name="Heading3"
+	Value="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: bold; font-size: 13pt; font-size-adjust: inherit; font-stretch: inherit; "
+	/>
+	<Style Name="Heading4"
+	/>
+</StyleSheet>
+<Sections>
+	<Section Type="PageHeader" Name="PageHeader"
+		Height="4635"
+	>
+		<Control 
+		Type="AR.Label"
+		Name="lbMunicipio"
+		Left="0"
+		Top="0"
+		Width="10063"
+		Height="425"
+		ClassName="Normal"
+		Style="font-weight: bold; font-size: 16pt; font-family: Arial; text-align: center; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label2"
+		Left="0"
+		Top="425"
+		Width="10063"
+		Height="284"
+		Caption="DEPARTAMENTO DE ADMINISTRACION TRIBUTARIA"
+		ClassName="Normal"
+		Style="font-weight: bold; font-size: 12pt; text-align: center; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label3"
+		Left="0"
+		Top="709"
+		Width="10063"
+		Height="283"
+		Caption="AVISO DE COBRO"
+		ClassName="Normal"
+		Style="font-weight: bold; font-size: 12pt; text-align: center; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label4"
+		Left="0"
+		Top="1276"
+		Width="1134"
+		Height="283"
+		Caption="Fecha: "
+		Multiline="0"
+		ClassName="Normal"
+		Style="vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtFechaAviso"
+		Left="1134"
+		Top="1276"
+		Width="7866"
+		Height="283"
+		CanGrow="0"
+		Style="vertical-align: middle; font-weight: bold; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label5"
+		Left="0"
+		Top="1701"
+		Width="1134"
+		Height="283"
+		Caption="Señor (a):"
+		ClassName="Normal"
+		Style="vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label6"
+		Left="0"
+		Top="2126"
+		Width="1134"
+		Height="283"
+		Caption="Direccion:"
+		ClassName="Normal"
+		Style="vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label7"
+		Left="0"
+		Top="2551"
+		Width="9921"
+		Height="284"
+		Multiline="0"
+		ClassName="Normal"
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label9"
+		Left="0"
+		Top="2835"
+		Width="10063"
+		Height="283"
+		Caption="dias contados a partir de la fecha que reciba este aviso, proceda a efectuar el pago de los Impuestos y Servicios "
+		ClassName="Normal"
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label10"
+		Left="0"
+		Top="3402"
+		Width="8362"
+		Height="283"
+		Caption="Si Ud. (s) no atiende este aviso nos veremos obligados a efectuar el cobro por la via judicial."
+		ClassName="Normal"
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label11"
+		Left="0"
+		Top="3118"
+		Width="6520"
+		Height="284"
+		Caption="abajo indicados en la Oficina de Administracion Tributaria Mununicipal."
+		ClassName="Normal"
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuNombreCont"
+		Left="1134"
+		Top="1701"
+		Width="7866"
+		Height="283"
+		CanGrow="0"
+		Style="vertical-align: middle; font-weight: bold; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label12"
+		Left="0"
+		Top="3827"
+		Width="10063"
+		Height="283"
+		Caption="MONTOS ADEUDADOS"
+		ClassName="Normal"
+		Style="font-weight: bold; font-size: 12pt; text-align: center; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label13"
+		Left="0"
+		Top="4252"
+		Width="2551"
+		Height="567"
+		Caption="CONCEPTO"
+		ClassName="Normal"
+		Style="font-weight: (null); text-align: center; vertical-align: middle; font-size: 9pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label14"
+		Left="2551"
+		Top="4252"
+		Width="1276"
+		Height="567"
+		Caption="AÑO IMPOSITIVO"
+		ClassName="Normal"
+		Style="font-weight: (null); text-align: center; vertical-align: middle; font-size: 9pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label15"
+		Left="3827"
+		Top="4252"
+		Width="1275"
+		Height="567"
+		Caption="MONTO"
+		ClassName="Normal"
+		Style="font-weight: (null); text-align: center; vertical-align: middle; font-size: 9pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label16"
+		Left="5102"
+		Top="4252"
+		Width="1276"
+		Height="567"
+		Caption="MULTAS"
+		ClassName="Normal"
+		Style="font-weight: (null); text-align: center; vertical-align: middle; font-size: 9pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label17"
+		Left="7654"
+		Top="4252"
+		Width="1275"
+		Height="567"
+		Caption="RECARGOS"
+		ClassName="Normal"
+		Style="font-weight: (null); text-align: center; vertical-align: middle; font-size: 9pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label18"
+		Left="6378"
+		Top="4252"
+		Width="1276"
+		Height="567"
+		Caption="INTERESES"
+		ClassName="Normal"
+		Style="font-weight: (null); text-align: center; vertical-align: middle; font-size: 9pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label19"
+		Left="8929"
+		Top="4252"
+		Width="1134"
+		Height="567"
+		Caption="VALOR TOTAL"
+		ClassName="Normal"
+		Style="font-weight: (null); text-align: center; vertical-align: middle; font-size: 9pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Shape"
+		Name="Shape17"
+		Left="0"
+		Top="4252"
+		Width="10063"
+		Height="567"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line25"
+		X1="2551"
+		Y1="4252"
+		X2="2551"
+		Y2="4819"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line26"
+		X1="3827"
+		Y1="4252"
+		X2="3827"
+		Y2="4819"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line27"
+		X1="5102"
+		Y1="4252"
+		X2="5102"
+		Y2="4819"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line28"
+		X1="6378"
+		Y1="4252"
+		X2="6378"
+		Y2="4819"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line29"
+		X1="7654"
+		Y1="4252"
+		X2="7654"
+		Y2="4819"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line30"
+		X1="8929"
+		Y1="4252"
+		X2="8929"
+		Y2="4819"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line38"
+		X1="1134"
+		Y1="1559"
+		X2="9000"
+		Y2="1559"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line39"
+		X1="1134"
+		Y1="1984"
+		X2="9000"
+		Y2="1984"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line40"
+		X1="1134"
+		Y1="2409"
+		X2="9000"
+		Y2="2409"
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuDireccion"
+		Left="1134"
+		Top="2126"
+		Width="7866"
+		Height="283"
+		CanGrow="0"
+		Style="vertical-align: middle; font-weight: bold; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuDiaspPago"
+		Left="9213"
+		Top="2551"
+		Width="708"
+		Height="284"
+		CanGrow="0"
+		>
+		</Control>
+	</Section>
+	<Section Type="Detail" Name="Detail"
+		Height="225"
+	>
+		<Control 
+		Type="AR.Shape"
+		Name="Shape18"
+		Left="0"
+		Top="0"
+		Width="10063"
+		Height="425"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line31"
+		X1="2551"
+		Y1="0"
+		X2="2551"
+		Y2="425"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line32"
+		X1="3827"
+		Y1="0"
+		X2="3827"
+		Y2="425"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line33"
+		X1="5102"
+		Y1="0"
+		X2="5102"
+		Y2="425"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line34"
+		X1="6378"
+		Y1="0"
+		X2="6378"
+		Y2="425"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line35"
+		X1="7654"
+		Y1="0"
+		X2="7654"
+		Y2="425"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line36"
+		X1="8929"
+		Y1="0"
+		X2="8929"
+		Y2="425"
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuConcepto"
+		Left="0"
+		Top="0"
+		Width="2551"
+		Height="425"
+		Style="font-size: 8pt; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuAnioImpositivo"
+		Left="2551"
+		Top="0"
+		Width="1276"
+		Height="425"
+		Style="font-size: 8pt; text-align: center; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuMonto"
+		Left="3827"
+		Top="0"
+		Width="1275"
+		Height="425"
+		Style="font-size: 9pt; text-align: right; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuMulta"
+		Left="5102"
+		Top="0"
+		Width="1276"
+		Height="425"
+		Style="font-size: 9pt; text-align: right; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuIntereses"
+		Left="6378"
+		Top="0"
+		Width="1276"
+		Height="425"
+		Style="font-size: 9pt; text-align: right; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuRecargos"
+		Left="7654"
+		Top="0"
+		Width="1275"
+		Height="425"
+		Style="font-size: 9pt; text-align: right; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuValTotal"
+		Left="8929"
+		Top="0"
+		Width="1134"
+		Height="425"
+		Style="font-size: 9pt; text-align: right; vertical-align: middle; "
+		>
+		</Control>
+	</Section>
+	<Section Type="PageFooter" Name="PageFooter"
+		Height="2640"
+	>
+		<Control 
+		Type="AR.Label"
+		Name="Label30"
+		Left="0"
+		Top="567"
+		Width="6803"
+		Height="283"
+		Caption="Intereses y recargos calculados hasta el mes de: "
+		ClassName="Normal"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line24"
+		X1="5953"
+		Y1="1701"
+		X2="9921"
+		Y2="1701"
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label31"
+		Left="5953"
+		Top="1701"
+		Width="3968"
+		Height="283"
+		Caption="FIRMA AUTORIZADA"
+		ClassName="Normal"
+		Style="text-align: center; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label32"
+		Left="5953"
+		Top="1984"
+		Width="3968"
+		Height="284"
+		Caption="ADMINISTRACION TRIBUTARIA"
+		ClassName="Normal"
+		Style="text-align: center; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label33"
+		Left="0"
+		Top="1984"
+		Width="2126"
+		Height="284"
+		Caption="Original: Contribuyente"
+		ClassName="Normal"
+		Style="font-size: 8.5pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label34"
+		Left="0"
+		Top="2268"
+		Width="2126"
+		Height="283"
+		Caption="Copia: Expediente"
+		ClassName="Normal"
+		Style="font-size: 8.5pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Shape"
+		Name="Shape19"
+		Left="7654"
+		Top="0"
+		Width="2409"
+		Height="283"
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line37"
+		X1="8929"
+		Y1="0"
+		X2="8929"
+		Y2="283"
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label35"
+		Left="7654"
+		Top="0"
+		Width="1275"
+		Height="283"
+		Caption="TOTAL"
+		ClassName="Normal"
+		Style="font-weight: bold; text-align: center; vertical-align: middle; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontoAdeudadoTotal"
+		Left="8929"
+		Top="0"
+		Width="1134"
+		Height="283"
+		CanGrow="0"
+		Style="vertical-align: middle; text-align: right; font-weight: bold; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Field"
+		Name="txtMontAdeuCalHastMes"
+		Left="4535"
+		Top="567"
+		Width="2268"
+		Height="283"
+		CanGrow="0"
+		Style="vertical-align: middle; text-align: center; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line42"
+		X1="4535"
+		Y1="850"
+		X2="6803"
+		Y2="850"
+		>
+		</Control>
+	</Section>
+</Sections>
+</ActiveReportsLayout>

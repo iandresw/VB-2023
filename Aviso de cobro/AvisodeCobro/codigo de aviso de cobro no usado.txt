@@ -1,0 +1,127 @@
+    
+    sql = "SELECT Contribuyente.Identidad, Contribuyente.Pnombre, Contribuyente.SNombre, Contribuyente.PApellido, Contribuyente.SApellido"
+    sql = sql & " FROM Contribuyente INNER JOIN Catastro ON Contribuyente.Identidad = Catastro.Identidad INNER JOIN"
+    sql = sql & " AbonadoSPEnc ON Contribuyente.Identidad = AbonadoSPEnc.Identidad AND Catastro.ClaveCatastro = AbonadoSPEnc.ClaveCatastro AND Catastro.ClaveCatastro = AbonadoSPEnc.ClaveCatastro"
+    sql = sql & " GROUP BY Contribuyente.Identidad, Contribuyente.Pnombre, Contribuyente.SNombre, Contribuyente.PApellido, Contribuyente.SApellido"
+
+
+
+
+Public Function Descuentos(ByVal Identidad As String, ByVal anio As String, ByVal ClaveCatastro As String, ByVal TipoCuenta As String) As Double
+    Dim sql As String
+    Dim Cantidad As Double
+    sql = " SELECT sum(AvPgDetalle.ValorUnitAvPgDet) as total FROM AvPgDetalle INNER JOIN AvPgEnc ON AvPgDetalle.NumAvPg = AvPgEnc.NumAvPg"
+    sql = sql & " WHERE (AvPgEnc.AvPgEstado = 1) AND (AvPgEnc.Identidad = '" & Identidad & "') AND substring(AvPgDetalle.CtaIngreso,1,6) = ('112127') "
+    sql = sql & " AND (DATEPART(year, AvPgEnc.FechaVenceAvPg) = " & anio & " ) AND (AvPgEnc.ClaveCatastro = '" & ClaveCatastro & "') AND  AvPgEnc.AvPgTipoImpuesto = " & TipoCuenta
+   ' sql = sql & " group by "
+    If DeRia.rsAbonadoSP.State = 1 Then DeRia.rsAbonadoSP.Close
+    DeRia.rsAbonadoSP.Open sql
+    If Not DeRia.rsAbonadoSP.EOF Then
+    Cantidad = IIf(IsNull(DeRia.rsAbonadoSP!Total), 0#, DeRia.rsAbonadoSP!Total)
+    Descuentos = Cantidad
+    Else
+    Cantidad = 0
+    Descuentos = Cantidad
+    End If
+End Function
+    
+
+Public Function Multa(ByVal Identidad As String, ByVal anio As String) As Double
+    Dim sql As String
+    Dim Cantidad As Double
+    sql = " SELECT sum(AvPgDetalle.ValorUnitAvPgDet) as total , ctaingreso FROM AvPgDetalle INNER JOIN AvPgEnc ON AvPgDetalle.NumAvPg = AvPgEnc.NumAvPg"
+    sql = sql & " WHERE (AvPgEnc.AvPgEstado = 1) AND (AvPgEnc.Identidad = '" & Identidad & "') AND substring(AvPgDetalle.CtaIngreso,1,6) = ('112120') AND (DATEPART(year, AvPgEnc.FechaVenceAvPg) = " & anio & " ) "
+    sql = sql & " group by AvPgDetalle.CtaIngreso"
+    If DeRia.rsAbonadoSP.State = 1 Then DeRia.rsAbonadoSP.Close
+    DeRia.rsAbonadoSP.Open sql
+    If Not DeRia.rsAbonadoSP.EOF Then
+    Cantidad = IIf(IsNull(DeRia.rsAbonadoSP!Total), 0#, DeRia.rsAbonadoSP!Total)
+    Multa = Cantidad
+    Else
+    Cantidad = 0
+    End If
+End Function
+
+
+
+
+
+
+
+
+
+
+
+Public Function Interes(ByVal Identidad As String, ByVal anio As String, ByVal TipoCuenta As String, ByVal ClaveCatastro As String) As Double
+    Dim sql As String
+    Dim Cantidad As String
+    Dim cuenta2 As String
+    Dim tipoInteres As String
+    cuenta2 = Left(TipoCuenta, 6)
+    If TipoCuenta = "1" Then ' cuenta recuperacion impuestos
+        tipoInteres = "11212601"
+    ElseIf TipoCuenta = "5" Then ' cuenta recuperacion servicios
+        tipoInteres = "11212602"
+    End If
+    sql = " SELECT sum(AvPgDetalle.ValorUnitAvPgDet) as total , ctaingreso FROM AvPgDetalle INNER JOIN AvPgEnc ON AvPgDetalle.NumAvPg = AvPgEnc.NumAvPg"
+    sql = sql & " WHERE (AvPgEnc.AvPgEstado = 1) AND (AvPgEnc.Identidad = '" & Identidad & "') AND substring(AvPgDetalle.CtaIngreso,1,6) = ('112126') AND (DATEPART(year, AvPgEnc.FechaVenceAvPg) = " & anio & " )  and ctaingreso = '" & tipoInteres & "' AND (AvPgEnc.ClaveCatastro = '" & ClaveCatastro & "')"
+    sql = sql & " group by AvPgDetalle.CtaIngreso"
+    If DeRia.rsAbonadoSP.State = 1 Then DeRia.rsAbonadoSP.Close
+    DeRia.rsAbonadoSP.Open sql
+    If Not DeRia.rsAbonadoSP.EOF Then
+    Cantidad = IIf(IsNull(DeRia.rsAbonadoSP!Total), 0#, DeRia.rsAbonadoSP!Total)
+    Interes = Cantidad
+    Else
+    Cantidad = 0
+    Interes = Cantidad
+    End If
+End Function
+Public Function Recargos(ByVal Identidad As String, ByVal anio As String, ByVal TipoCuenta As String, ByVal ClaveCatastro As String) As Double
+    Dim sql As String
+    Dim Cantidad As String
+    Dim cuenta2 As String
+    Dim tipoRecargo As String
+    cuenta2 = Left(TipoCuenta, 6)
+    If TipoCuenta = "1" Then  ' cuenta recuperacion impuestos
+        tipoRecargo = "11212101"
+    ElseIf TipoCuenta = "5" Then ' cuenta recuperacion servicios
+        tipoRecargo = "11212102"
+    End If
+    sql = " SELECT sum(AvPgDetalle.ValorUnitAvPgDet) as total , ctaingreso FROM AvPgDetalle INNER JOIN AvPgEnc ON AvPgDetalle.NumAvPg = AvPgEnc.NumAvPg"
+    sql = sql & " WHERE (AvPgEnc.AvPgEstado = 1) AND (AvPgEnc.Identidad = '" & Identidad & "') AND substring(AvPgDetalle.CtaIngreso,1,6) = ('112121') AND (DATEPART(year, AvPgEnc.FechaVenceAvPg) = " & anio & " ) and ctaingreso = '" & tipoRecargo & "'AND (AvPgEnc.ClaveCatastro = '" & ClaveCatastro & "')"
+    sql = sql & " group by AvPgDetalle.CtaIngreso"
+    If DeRia.rsAbonadoSP.State = 1 Then DeRia.rsAbonadoSP.Close
+    DeRia.rsAbonadoSP.Open sql
+    If Not DeRia.rsAbonadoSP.EOF Then
+    Cantidad = IIf(IsNull(DeRia.rsAbonadoSP!Total), 0#, DeRia.rsAbonadoSP!Total)
+    Recargos = Cantidad
+    Else
+    Cantidad = 0
+    Recargos = Cantidad
+    End If
+End Function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----consulta los impuestos
+
+sql = " SELECT AvPgEnc.AvPgDescripcion, DATEPART(year, AvPgEnc.FechaVenceAvPg) AS aniox, SUM(AvPgDetalle.ValorUnitAvPgDet) AS total, AvPgEnc.AvPgTipoImpuesto, AvPgEnc.ClaveCatastro"
+            sql = sql & " FROM AvPgDetalle INNER JOIN"
+            sql = sql & " AvPgEnc ON AvPgDetalle.NumAvPg = AvPgEnc.NumAvPg INNER JOIN"
+            sql = sql & " CuentaIngreso_A ON AvPgDetalle.CtaIngreso = CuentaIngreso_A.CtaIngreso AND DATEPART(year, AvPgEnc.FechaVenceAvPg) = CuentaIngreso_A.Anio"
+            sql = sql & " WHERE (AvPgEnc.AvPgEstado = 1) AND (AvPgEnc.Identidad = '" & rsCont!Identidad & "') AND (AvPgEnc.AvPgTipoImpuesto IN (5,1)) AND (CuentaIngreso_A.Tipo <> 2)"
+            sql = sql & " GROUP BY AvPgEnc.AvPgDescripcion, DATEPART(year, AvPgEnc.FechaVenceAvPg), AvPgEnc.AvPgTipoImpuesto, AvPgEnc.ClaveCatastro"
+            sql = sql & " ORDER BY  ANIOX"

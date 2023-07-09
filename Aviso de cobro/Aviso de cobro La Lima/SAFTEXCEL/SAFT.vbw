@@ -1,0 +1,14 @@
+FrmReportePP = 185, 12, 835, 732, C, 0, 0, 0, 0, C
+DeRia = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+inicio = -126, 163, 1190, 946, C
+CapaBD = 362, 148, 896, 983, C
+Factura = 864, 134, 1398, 969, C
+DetalleFactura = 0, 0, 0, 0, C
+Exporta = 285, 198, 1319, 986, C
+Utilities = 362, 148, 896, 983, C
+Contrib = 362, 148, 896, 983, CZ
+Alcaldia = 0, 0, 0, 0, C
+clsRptPlanPago = 123, 114, 1208, 677, C
+clsPPPIndusYCom = 250, 142, 1223, 705, C
+clsPPPNatural = 354, 124, 842, 687, C
+Form1 = 0, 0, 0, 0, C, 0, 0, 0, 0, C

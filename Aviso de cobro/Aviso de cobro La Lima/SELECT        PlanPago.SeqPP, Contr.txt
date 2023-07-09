@@ -1,0 +1,8 @@
+SELECT        PlanPago.SeqPP, Contribuyente.Identidad, Contribuyente.Pnombre, PlanPago.FechaInicioPP, PlanPago.NumCuotasPP, PlanPago.ValorCuotaPP, PlanPago.MontoPP
+FROM            PlanPago INNER JOIN
+                         Contribuyente ON PlanPago.Identidad = Contribuyente.Identidad INNER JOIN
+                         PlanPagoDetalle ON PlanPago.SeqPP = PlanPagoDetalle.SeqPP INNER JOIN
+                         AvPgEnc ON PlanPagoDetalle.NumAvPg = AvPgEnc.NumAvPg
+WHERE        (PlanPago.EstadoPP = 0) AND (Contribuyente.Tipo = 'FALSE') AND (AvPgEnc.AvPgTipoImpuesto = 5)
+GROUP BY PlanPago.SeqPP, Contribuyente.Identidad, Contribuyente.Pnombre, PlanPago.FechaInicioPP, PlanPago.NumCuotasPP, PlanPago.ValorCuotaPP, PlanPago.MontoPP
+ORDER BY PlanPago.SeqPP

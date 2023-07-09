@@ -1,0 +1,29 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "clsAvisoCobro"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Public Function NombreContribuyente(identidad As String) As String
+     With DeRia.rsAbonadoSP
+        .Requery
+        .Find "identidad='" & identidad & "'"
+        If .EOF Then
+           MsgBox ("entro")
+        Else
+            If !identidad = identidad Then
+                NombreContribuyente = Trim(DeRia.rsAbonadoSP!Pnombre) & " " & Trim(DeRia.rsAbonadoSP!sNombre) & " " & Trim(DeRia.rsAbonadoSP!PApellido) & " " & Trim(DeRia.rsAbonadoSP!sApellido)
+                MsgBox (NombreContribuyente)
+            Else
+               MsgBox ("Ingrese pero no encontro")
+            End If
+        End If
+    End With
+End Function

@@ -1,0 +1,14 @@
+Línea 66: la clase MSMask.MaskEdBox del control txtFecha1 no era una clase de control cargada.
+Línea 88: la clase MSMask.MaskEdBox del control txtFecha2 no era una clase de control cargada.
+Línea 81: el nombre de la propiedad _ExtentX de txtFecha1 no es válido.
+Línea 82: el nombre de la propiedad _ExtentY de txtFecha1 no es válido.
+Línea 83: el nombre de la propiedad _Version de txtFecha1 no es válido.
+Línea 84: el nombre de la propiedad MaxLength de txtFecha1 no es válido.
+Línea 85: el nombre de la propiedad Mask de txtFecha1 no es válido.
+Línea 86: el nombre de la propiedad PromptChar de txtFecha1 no es válido.
+Línea 103: el nombre de la propiedad _ExtentX de txtFecha2 no es válido.
+Línea 104: el nombre de la propiedad _ExtentY de txtFecha2 no es válido.
+Línea 105: el nombre de la propiedad _Version de txtFecha2 no es válido.
+Línea 106: el nombre de la propiedad MaxLength de txtFecha2 no es válido.
+Línea 107: el nombre de la propiedad Mask de txtFecha2 no es válido.
+Línea 108: el nombre de la propiedad PromptChar de txtFecha2 no es válido.
